@@ -1,6 +1,6 @@
 # Guess The Number Game
 
-Multiplayer game where users are trying to guess the right number between 0-100
+Multiplayer game where users are trying to guess the right number between 0-100 buit on Nuxt and Express
 
 ## Getting Started
 
