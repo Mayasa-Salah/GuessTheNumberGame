@@ -1,7 +1,8 @@
 <template>
   <b-row >
+    <h1 v-if="show" class="playerName">Congtats {{playerName.name}}</h1>
     <Player v-for="player in playersList" v-bind:playerName="player"
-      v-bind:key="player.id" v-model="parentState" :parentState="parentState" @updateState="getPlayerState"/>
+      v-bind:key="player.id" v-model="parentState" :parentState="parentState" @updateState="getPlayerState" @getPlayer="getPlayerName"/>
   </b-row>
 </template>
 
@@ -19,6 +20,7 @@ export default {
       { id: 2, name: 'Player Three' }
       ],
        playerName:'',
+       show:false,
     }
   },
 
@@ -29,6 +31,7 @@ export default {
   watch: {
     parentState: function () {
       if (this.parentState == true)
+      this.show = true
       this.$confetti.start();
     }
   },
@@ -36,7 +39,9 @@ export default {
   methods: {
     getPlayerState(state){
       this.parentState = state
-      console.log(this.playerName)
+    },
+    getPlayerName(value){
+      this.playerName = value
     },
     love() {
       this.$confetti.update({
@@ -59,3 +64,16 @@ export default {
   
 }
 </script>
+
+<style>
+.row{
+  margin: 2% 0;
+}
+.col-sm{
+  padding: 8% 5%;
+  text-align: center;
+  border: 2px solid #ededed;
+  margin: 1% 1%;
+}
+
+</style>

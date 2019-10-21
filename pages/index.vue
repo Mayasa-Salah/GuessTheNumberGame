@@ -17,15 +17,3 @@ export default {
 }
 </script>
 
-<style>
-.row{
-  margin: 2% 0;
-}
-.col-sm{
-  padding: 8% 5%;
-  text-align: center;
-  border: 2px solid #ededed;
-  margin: 1% 1%;
-}
-
-</style>

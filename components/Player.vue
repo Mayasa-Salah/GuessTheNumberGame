@@ -78,12 +78,14 @@ import axios from '~/plugins/axios'
          })
          this.form.input =''
          this.$emit('updateState', this.playerState)
+         this.$emit('getPlayer', this.playerName)
       },
     }
   }
 </script>
 
 <style>
+
   .submit-btn{
     background-color: #fff;
     color: #28a745;
