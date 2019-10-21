@@ -2,10 +2,6 @@
 
 Multiplayer game where users are trying to guess the right number between 0-100 buit on Nuxt and Express
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development.
-
 ## Build Setup
 
 ``` bash
