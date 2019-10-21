@@ -1,6 +1,6 @@
 <template>
   <b-row >
-    <h1 v-if="show" class="playerName">Congtats {{playerName.name}}</h1>
+    <h1 v-if="show" class="playerName">Congrats {{playerName.name}}!</h1>
     <Player v-for="player in playersList" v-bind:playerName="player"
       v-bind:key="player.id" v-model="parentState" :parentState="parentState" @updateState="getPlayerState" @getPlayer="getPlayerName"/>
   </b-row>
@@ -74,6 +74,13 @@ export default {
   text-align: center;
   border: 2px solid #ededed;
   margin: 1% 1%;
+}
+.playerName{
+  position: absolute;
+  color: red;
+  bottom: 1%;
+  left: 35%;
+  z-index: 10;
 }
 
 </style>
