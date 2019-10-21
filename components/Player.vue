@@ -2,6 +2,9 @@
   <b-col sm>
     <b-form @submit="onSubmit" >
       <b-form-group id="input-group-2" label="Enter a number between 0 and 100" label-for="input" >
+        <transition>
+          <p class="guess-result" >{{result}}</p>
+        </transition>
         <b-form-input
           id="input"
           v-model="form.input"
@@ -9,9 +12,6 @@
           placeholder="Enter a number"
         ></b-form-input>
       </b-form-group>
-      <transition name="bounse">
-      <p class="m-0">{{ result}}</p>
-      </transition>
       <b-button type="submit" variant="success" :disabled="this.parentState" class="submit-btn">Submit</b-button>
     </b-form>  
   </b-col>
@@ -28,6 +28,7 @@ import axios from '~/plugins/axios'
           input: '',
         },
         result: '',
+        show: true
       }  
     },
 
@@ -97,23 +98,9 @@ import axios from '~/plugins/axios'
     animation: pulse 1s;
     transform: translateY(-5px);
   }
-
-  .bounce-enter {
-    animation: bounce-in .5s;
+  .guess-result{
+    color: #eb3d70;
+    font-size: 1.5rem;
   }
-  .bounce-leave {
-    animation: bounce-in .5s reverse;
-  }
-  @keyframes bounce-in {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
+ 
 </style>

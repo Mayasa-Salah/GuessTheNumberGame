@@ -13,14 +13,15 @@ function result (guess) {
   } else if (guess > rightGuess) {
     final = 'high'
   } else {
-    final = 'inavlid input'
+    final = 'invalid input'
   }
 
   return final
 }
 
 router.get('/result/:guess', function (req, res) {
-  const userGuess = parseInt(req.params.guess)
+  const userGuess = +req.params.guess
+
   res.send({ guess: result(userGuess) })
 })
 
