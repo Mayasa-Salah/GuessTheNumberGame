@@ -77,8 +77,7 @@ export default {
 }
 .playerName{
   position: absolute;
-  color: red;
-  bottom: 1%;
+  color:#ed3f77;
   left: 35%;
   z-index: 10;
 }
